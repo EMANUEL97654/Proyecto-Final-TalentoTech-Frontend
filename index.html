@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <title>Nebula Books | Libros de ciencia ficción</title>
+    <meta name="description" content="Nebula Books es una librería online especializada en ciencia ficción. Encontrá clásicos como Hyperion, Ubik y El fin de la infancia y comprá desde tu casa.">
+    <meta name="keywords" content="libros, ciencia ficción, librería online, Hyperion, Ubik, Arthur C. Clarke, Philip K. Dick">
+    <meta name="author" content="Emanuel Gartland">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- defer: el script se ejecuta cuando el HTML terminó de cargar -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header id="inicio">
+        <h1>
+            <img src="assets/logo.png" alt="Nebula Books" class="logo">
+        </h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li>
+                    <a href="#carrito">
+                        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                        Carrito (<span id="contador-carrito">0</span>)
+                    </a>
+                </li>
+                <li><a href="#multimedia">Multimedia</a></li>
+                <li><a href="#resenias">Reseñas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        
+        <section id="productos">
+            <h2>Catálogo de ciencia ficción</h2>
+            
+            <p id="estado-catalogo" class="estado-catalogo" aria-live="polite">
+                Cargando catálogo…
+            </p>
+            
+            <div id="catalogo" class="contenedor-productos"></div>
+        </section>
+        
+        
+        <section id="carrito" aria-labelledby="titulo-carrito">
+            <h2 id="titulo-carrito">Tu carrito</h2>
+            <ul id="lista-carrito" class="lista-carrito"></ul>
+            <p class="total-carrito">Total: <strong id="total-carrito">$0</strong></p>
+            <div class="acciones-carrito">
+                <button type="button" id="vaciar-carrito" class="boton-secundario">Vaciar carrito</button>
+                <button type="button" id="finalizar-compra">Finalizar compra</button>
+            </div>
+        </section>
+        
+        <section id="multimedia">
+            <h2>Conocé Nebula Books</h2>
+            <video controls preload="metadata" aria-label="Video de presentación de Nebula Books">
+                <source src="assets/video.mp4" type="video/mp4">
+                Tu navegador no puede reproducir este video.
+            </video>
+        </section>
+        
+        <section id="resenias">
+            <h2>Reseñas</h2>
+            
+            <div class="contenedor-reseñas">
+                <article class="reseña">
+                    <h3>Nahuel Gonzalez</h3>
+                    <p>Excelente experiencia. Encontré varios libros de ciencia ficción que hacía tiempo estaba buscando. La atención fue rápida y el pedido llegó en perfectas condiciones.</p>
+                </article>
+                
+                <article class="reseña">
+                    <h3>Jimena Perez Avila</h3>
+                    <p>Muy buena variedad de libros y precios. El proceso de compra fue sencillo y recibí mi pedido antes de lo esperado. Definitivamente volvería a comprar.</p>
+                </article>
+                
+                <article class="reseña">
+                    <h3>Carolina Lopez Cruz</h3>
+                    <p>Me encantó la selección de ciencia ficción de Nebula Books. Compré Ubik y llegó perfectamente embalado. Muy recomendable para quienes disfrutan del género.</p>
+                </article>
+            </div>
+        </section>
+        
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <!-- novalidate: la validación la hace script.js para mostrar mensajes propios -->
+            <form id="form-contacto" action="https://formspree.io/f/maeygzyw" method="POST" novalidate>
+                <label for="nombre">
+                    Nombre:
+                    <input type="text" name="nombre" id="nombre" autocomplete="name" required>
+                    <span class="error" id="error-nombre"></span>
+                </label>
+                <label for="email">
+                    Email:
+                    <input type="email" name="email" id="email" autocomplete="email" required>
+                    <span class="error" id="error-email"></span>
+                </label>
+                <label for="mensaje">
+                    Mensaje:
+                    <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
+                    <span class="error" id="error-mensaje"></span>
+                </label>
+                <button type="submit">Enviar</button>
+                <p id="estado-formulario" class="estado-formulario" aria-live="polite"></p>
+            </form>
+            
+            <h3>Contactos recibidos</h3>
+            <div class="contenedor-tabla">
+                <table>
+                    <caption>Últimas consultas recibidas</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Motivo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Emanuel Gonzalez</td>
+                            <td>emanuel@gmail.com</td>
+                            <td>Consulta por un libro</td>
+                        </tr>
+                        <tr>
+                            <td>Nahuel Gonzalez</td>
+                            <td>nahuel@gmail.com</td>
+                            <td>Consulta por envío</td>
+                        </tr>
+                        <tr>
+                            <td>Jimena Perez Avila</td>
+                            <td>jime@gmail.com</td>
+                            <td>Consulta por precio mayorista</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Total de consultas: 3</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2026 Nebula Books</p>
+        
+        <div class="redes-sociales">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+    
+    <!-- Mensajes flotantes ("Agregaste X al carrito", etc.) -->
+    <div id="mensaje-usuario" class="mensaje-usuario" role="status" aria-live="polite"></div>
+</body>
+</html>
