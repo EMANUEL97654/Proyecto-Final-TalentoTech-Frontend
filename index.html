@@ -3,122 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO -->
     <title>Nebula Books | Libros de ciencia ficción</title>
     <meta name="description" content="Nebula Books es una librería online especializada en ciencia ficción. Encontrá clásicos como Hyperion, Ubik y El fin de la infancia y comprá desde tu casa.">
-    <meta name="keywords" content="libros, ciencia ficción, librería online, Hyperion, Ubik, Arthur C. Clarke, Philip K. Dick">
     <meta name="author" content="Emanuel Gartland">
-    
+    <meta name="theme-color" content="#0b1020">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nebula Books | Libros de ciencia ficción">
+    <meta property="og:description" content="Librería online especializada en ciencia ficción. Historias para viajar más allá de las estrellas.">
+    <meta property="og:url" content="https://emanuel97654.github.io/ProyectoFinal/">
+    <meta property="og:image" content="https://emanuel97654.github.io/ProyectoFinal/assets/logo.png">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://covers.openlibrary.org">
     <link rel="stylesheet" href="styles.css">
-    <!-- defer: el script se ejecuta cuando el HTML terminó de cargar -->
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header id="inicio">
-        <h1>
-            <img src="assets/logo.png" alt="Nebula Books" class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" class="sprite-iconos" aria-hidden="true">
+        <symbol id="i-carrito" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></symbol>
+        <symbol id="i-basura" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></symbol>
+        <symbol id="i-cerrar" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></symbol>
+        <symbol id="i-mas" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></symbol>
+        <symbol id="i-menos" viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></symbol>
+        <symbol id="i-facebook" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></symbol>
+        <symbol id="i-x" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></symbol>
+    </svg>
+
+    <header id="inicio" class="encabezado">
+        <h1 class="encabezado-logo">
+            <a href="#inicio">
+                <picture>
+                    <source srcset="assets/logo.png" type="image/png">
+                    <img src="assets/logo.png" alt="Nebula Books" class="logo" width="400" height="400">
+                </picture>
+            </a>
         </h1>
-        <nav aria-label="Navegación principal">
-            <ul>
+
+        <!-- Botón hamburguesa: solo se ve en celulares -->
+        <button type="button" class="boton-icono boton-menu" id="boton-menu"
+            aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+            <svg class="icono" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+
+        <nav aria-label="Navegación principal" class="navegacion">
+            <ul id="menu-principal" class="menu">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#productos">Productos</a></li>
-                <li>
-                    <a href="#carrito">
-                        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-                        Carrito (<span id="contador-carrito">0</span>)
-                    </a>
-                </li>
                 <li><a href="#multimedia">Multimedia</a></li>
                 <li><a href="#resenias">Reseñas</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
+
+        <!-- Abre el panel lateral del carrito -->
+        <button type="button" class="boton-carrito" id="abrir-carrito" aria-controls="carrito" aria-haspopup="dialog">
+            <svg class="icono" aria-hidden="true"><use href="#i-carrito"></use></svg>
+            <span class="texto-oculto">Abrir carrito,</span>
+            <span id="contador-carrito" class="contador-carrito">0</span>
+            <span class="texto-oculto">productos</span>
+        </button>
     </header>
-    
+
     <main>
-        
+
         <section id="productos">
             <h2>Catálogo de ciencia ficción</h2>
-            
+
             <p id="estado-catalogo" class="estado-catalogo" aria-live="polite">
                 Cargando catálogo…
             </p>
-            
+
             <div id="catalogo" class="contenedor-productos"></div>
         </section>
-        
-        
-        <section id="carrito" aria-labelledby="titulo-carrito">
-            <h2 id="titulo-carrito">Tu carrito</h2>
-            <ul id="lista-carrito" class="lista-carrito"></ul>
-            <p class="total-carrito">Total: <strong id="total-carrito">$0</strong></p>
-            <div class="acciones-carrito">
-                <button type="button" id="vaciar-carrito" class="boton-secundario">Vaciar carrito</button>
-                <button type="button" id="finalizar-compra">Finalizar compra</button>
-            </div>
-        </section>
-        
+
         <section id="multimedia">
             <h2>Conocé Nebula Books</h2>
-            <video controls preload="metadata" aria-label="Video de presentación de Nebula Books">
+            <video controls preload="metadata" width="1280" height="720"
+                aria-label="Video de presentación de Nebula Books">
                 <source src="assets/video.mp4" type="video/mp4">
                 Tu navegador no puede reproducir este video.
             </video>
         </section>
-        
+
         <section id="resenias">
             <h2>Reseñas</h2>
-            
-            <div class="contenedor-reseñas">
-                <article class="reseña">
+
+            <div class="contenedor-resenias">
+                <article class="resenia">
                     <h3>Nahuel Gonzalez</h3>
                     <p>Excelente experiencia. Encontré varios libros de ciencia ficción que hacía tiempo estaba buscando. La atención fue rápida y el pedido llegó en perfectas condiciones.</p>
                 </article>
-                
-                <article class="reseña">
+
+                <article class="resenia">
                     <h3>Jimena Perez Avila</h3>
                     <p>Muy buena variedad de libros y precios. El proceso de compra fue sencillo y recibí mi pedido antes de lo esperado. Definitivamente volvería a comprar.</p>
                 </article>
-                
-                <article class="reseña">
+
+                <article class="resenia">
                     <h3>Carolina Lopez Cruz</h3>
                     <p>Me encantó la selección de ciencia ficción de Nebula Books. Compré Ubik y llegó perfectamente embalado. Muy recomendable para quienes disfrutan del género.</p>
                 </article>
             </div>
         </section>
-        
+
         <section id="contacto">
             <h2>Contacto</h2>
             <!-- novalidate: la validación la hace script.js para mostrar mensajes propios -->
             <form id="form-contacto" action="https://formspree.io/f/maeygzyw" method="POST" novalidate>
-                <label for="nombre">
-                    Nombre:
-                    <input type="text" name="nombre" id="nombre" autocomplete="name" required>
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" autocomplete="name" required aria-describedby="error-nombre">
                     <span class="error" id="error-nombre"></span>
-                </label>
-                <label for="email">
-                    Email:
-                    <input type="email" name="email" id="email" autocomplete="email" required>
+                </div>
+                <div class="campo">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" autocomplete="email" required aria-describedby="error-email">
                     <span class="error" id="error-email"></span>
-                </label>
-                <label for="mensaje">
-                    Mensaje:
-                    <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
+                </div>
+                <div class="campo">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea name="mensaje" id="mensaje" rows="5" required aria-describedby="error-mensaje"></textarea>
                     <span class="error" id="error-mensaje"></span>
-                </label>
-                <button type="submit">Enviar</button>
+                </div>
+                <button type="submit" class="boton">Enviar</button>
                 <p id="estado-formulario" class="estado-formulario" aria-live="polite"></p>
             </form>
-            
-            <h3>Contactos recibidos</h3>
+
+            <h3>Ejemplos de consultas</h3>
             <div class="contenedor-tabla">
                 <table>
-                    <caption>Últimas consultas recibidas</caption>
+                    <caption>Consultas de ejemplo (datos ficticios)</caption>
                     <thead>
                         <tr>
                             <th scope="col">Nombre</th>
@@ -129,17 +148,17 @@
                     <tbody>
                         <tr>
                             <td>Emanuel Gonzalez</td>
-                            <td>emanuel@gmail.com</td>
+                            <td>emanuel@example.com</td>
                             <td>Consulta por un libro</td>
                         </tr>
                         <tr>
                             <td>Nahuel Gonzalez</td>
-                            <td>nahuel@gmail.com</td>
+                            <td>nahuel@example.com</td>
                             <td>Consulta por envío</td>
                         </tr>
                         <tr>
                             <td>Jimena Perez Avila</td>
-                            <td>jime@gmail.com</td>
+                            <td>jime@example.com</td>
                             <td>Consulta por precio mayorista</td>
                         </tr>
                     </tbody>
@@ -152,17 +171,57 @@
             </div>
         </section>
     </main>
-    
+
     <footer>
         <p>© 2026 Nebula Books</p>
-        
+
         <div class="redes-sociales">
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
-            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icono" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icono" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg class="icono" aria-hidden="true"><use href="#i-x"></use></svg></a>
         </div>
     </footer>
-    
-    <div id="mensaje-usuario" class="mensaje-usuario" role="status" aria-live="polite"></div>
+
+    <dialog id="carrito" class="panel-carrito" aria-labelledby="titulo-carrito">
+        <div class="panel-contenido">
+            <div class="panel-encabezado">
+                <h2 id="titulo-carrito">Tu carrito</h2>
+                <button type="button" class="boton-icono" id="cerrar-carrito" aria-label="Cerrar carrito">
+                    <svg class="icono" aria-hidden="true"><use href="#i-cerrar"></use></svg>
+                </button>
+            </div>
+
+            <p id="aviso-carrito" class="texto-oculto" role="status"></p>
+
+            <div id="vista-lista" class="panel-vista">
+                <ul id="lista-carrito" class="lista-carrito"></ul>
+
+                <div class="panel-pie">
+                    <p class="total-carrito">Total: <strong id="total-carrito">$ 0</strong></p>
+                    <button type="button" id="finalizar-compra" class="boton boton-bloque">Finalizar compra</button>
+                    <button type="button" id="vaciar-carrito" class="boton boton-secundario boton-bloque">Vaciar carrito</button>
+                </div>
+            </div>
+
+            <div id="vista-resumen" class="panel-vista" hidden>
+                <h3 class="resumen-titulo">Resumen de tu compra</h3>
+                <ul id="lista-resumen" class="lista-resumen"></ul>
+
+                <div class="panel-pie">
+                    <p class="total-carrito">Total: <strong id="total-resumen">$ 0</strong></p>
+                    <button type="button" id="confirmar-compra" class="boton boton-bloque">Confirmar compra</button>
+                    <button type="button" id="volver-carrito" class="boton boton-secundario boton-bloque">Volver al carrito</button>
+                </div>
+            </div>
+
+            <div id="vista-gracias" class="panel-vista panel-gracias" hidden>
+                <p class="gracias-titulo">¡Gracias por tu compra!</p>
+                <p id="texto-gracias"></p>
+                <button type="button" id="seguir-comprando" class="boton boton-bloque">Seguir comprando</button>
+            </div>
+        </div>
+    </dialog>
+
+    <div id="mensaje-usuario" class="mensaje-usuario" role="status"></div>
 </body>
 </html>
