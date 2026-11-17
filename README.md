@@ -2,8 +2,6 @@
 
 Nebula Books es una tienda ficticia de libros de ciencia ficción, hecha como proyecto final de HTML, CSS y JavaScript.
 
-🔗 Sitio publicado: https://emanuel97654.github.io/ProyectoFinal/
-
 ## Características
 
 - **Catálogo dinámico:** los libros se cargan desde la API pública de [Open Library](https://openlibrary.org/developers/api) con `fetch` y `async/await`, con mensajes de carga, de error y de catálogo vacío.
